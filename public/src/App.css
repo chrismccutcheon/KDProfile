@@ -80,7 +80,7 @@ input:active, button:active, submit:active{
   font-size: 30px;
 }
 .about p{
-  color: lightgray;
+  color: Gray;
   line-height: 25px;
   text-align: left !important;
   font-size: 15px;
