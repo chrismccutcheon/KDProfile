@@ -18,16 +18,22 @@
 
 .App-intro {
   font-size: large;
-  min-height: calc(100vh - 170px);
+
 
   /* equal to footer height */
+}
+
+.App-body{
+  min-height: calc(100vh - 170px);
+  display: block;
+  vertical-align: middle;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
+/*Website button styles*/
 button:focus {
   outline:0;
 }
@@ -43,7 +49,7 @@ input:hover, button:hover, submit:hover{
 input:active, button:active, submit:active{
   transform: translateY(4px);
 }
-
+/*Navabar button styles*/
 .navbar button{
   font-family: Playfair Display;
   font-size: 15px;
@@ -52,6 +58,7 @@ input:active, button:active, submit:active{
   margin-left: 30px;
 }
 
+/*Footer styles*/
 .footer button{
   font-family: Playfair Display;
   font-weight: 400;
@@ -64,6 +71,17 @@ input:active, button:active, submit:active{
   height: 100px;
   width: 100%;
 }
+/*Home Page Styles*/
+.hompage{
+  margin-left: auto;
+  margin-right: auto;
+}
+.homeImg{
+  vertical-align: middle;
+  width: 100%;
+}
+
+/*About Page Styles*/
 .about {
   margin-left: 200px;
   margin-right: 200px;

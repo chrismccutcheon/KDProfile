@@ -24,9 +24,7 @@ class App extends Component {
         <div className="App-header">
           <NavBar click={this.handleNavClick}/>
         </div>
-        <div className="App-intro">
-          <Body type={this.state.page}/>
-        </div>
+        <Body type={this.state.page}/>
         <Footer text="This is the footer"/>
       </div>
     );
