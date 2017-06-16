@@ -1,0 +1,88 @@
+.App {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  overflow:auto;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40px;
+}
+
+.App-header {
+  box-sizing: border-box;
+  background-color: #efefef;
+  height: 70px;
+}
+
+.App-intro {
+  font-size: large;
+  min-height: calc(100vh - 170px);
+
+  /* equal to footer height */
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+button:focus {
+  outline:0;
+}
+input, button, submit {
+  border:none;
+  background-color: #efefef;
+  color: #303030;
+}
+input:hover, button:hover, submit:hover{
+  cursor: pointer;
+  color: Gray;
+}
+input:active, button:active, submit:active{
+  transform: translateY(4px);
+}
+
+.navbar button{
+  font-family: Playfair Display;
+  font-size: 15px;
+  letter-spacing: .3em;
+  padding-top: 20px;
+  margin-left: 30px;
+}
+
+.footer button{
+  font-family: Playfair Display;
+  font-weight: 400;
+  font-size: 15px;
+}
+.footer{
+  box-sizing: border-box;
+  padding-top: 20px;
+  background-color: #efefef;
+  height: 100px;
+  width: 100%;
+}
+.about {
+  margin-left: 200px;
+  margin-right: 200px;
+}
+.about h4{
+  font-family: 'Cormorant Upright';
+  font-size: 22px;
+  font-style: italic;
+}
+.about h2{
+  font-family: 'BenchNine';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+}
+.about p{
+  color: lightgray;
+  line-height: 25px;
+  text-align: left !important;
+  font-size: 15px;
+  font-family: 'Cormorant Upright';
+}
