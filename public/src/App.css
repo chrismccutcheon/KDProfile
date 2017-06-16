@@ -11,6 +11,8 @@
 }
 
 .App-header {
+  position: fixed;
+  width: 100%;
   box-sizing: border-box;
   background-color: #efefef;
   height: 70px;
@@ -24,6 +26,7 @@
 }
 
 .App-body{
+  margin-top: 70px;
   min-height: calc(100vh - 170px);
   display: block;
   vertical-align: middle;
@@ -72,8 +75,13 @@ input:active, button:active, submit:active{
   width: 100%;
 }
 /*Home Page Styles*/
-.hompage{
+.homepage{
+  /*background-image: url("./images/court.jpg");*/
+  background-size: cover;
+  background-position: center;
   margin-left: auto;
+  height: calc(100vh - 170px);
+  width: 70%;
   margin-right: auto;
 }
 .homeImg{
@@ -104,3 +112,22 @@ input:active, button:active, submit:active{
   font-size: 15px;
   font-family: 'Cormorant Upright';
 }
+
+.demo4 {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    height: 700px;
+    position: relative;
+  }
+
+  .demo4-inner {
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+  }
+
+  .demo4-photo {
+    position: absolute;
+    background-color: lightgray;
+  }

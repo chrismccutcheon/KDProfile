@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Footer from "./components/footer";
 import NavBar from "./components/navbar";
 import Body from './components/body';
-import Home from "./pages/home";
 import './App.css';
 
 // import logo from './logo.svg';
