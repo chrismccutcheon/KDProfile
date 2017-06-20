@@ -33,13 +33,7 @@ class Body extends Component {
     }
     return (
       <div className="App-body">
-        <div className="leftbody">
-          hello
-        </div>
         {page}
-        <div className="rightBody">
-          hello
-        </div>
       </div>
     );
   }

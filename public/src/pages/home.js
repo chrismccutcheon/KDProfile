@@ -10,38 +10,66 @@ class Home extends Component {
   constructor(props){
     super(props);
     this.changeHomepage = this.changeHomepage.bind(this);
-    this.state = {homePage: "Main"};
+    this.pageData = [{
+      title: "Katharine Decker",
+      image: bridge
+    },{
+      title: "Dedication",
+      image: lab
+    },{
+      title: "Service",
+      image: court
+    },{
+      title: "Loyalty",
+      image: flowers
+    }]
+    this.state = {position: 0};
   }
-  changeHomepage(page){
-    this.setState({homePage: page});
+  changeHomepage(action){
+    var curPos = this.state.position;
+    if(action === "up"){
+      if(curPos === this.pageData.length-1){
+        curPos = 0;
+      } else {
+        curPos++;
+      }
+    } else {
+      if (curPos === 0) {
+        curPos = this.pageData.length-1;
+      }
+      curPos--;
+    }
+    this.setState({position: curPos});
   }
+
 
   render(){
 
-    let page = null;
-    switch (this.state.homePage) {
-      case "Main":
-        console.log(this.state.homePage);
-        page = <HomeScreen title="Katharine Decker" backgroundImage={flowers} next="Dedication" back="Hard Working" move={this.changeHomepage}/>
-        break;
-      case "Dedication":
-        page = <HomeScreen title="Dedication" backgroundImage={lab} next="Service" back="Main" move={this.changeHomepage}/>
-        break;
-      case "Hard Working":
-        page = <HomeScreen title="Hard Working" backgroundImage={court} next="" back="Main" move={this.changeHomepage}/>
-        break;
-      case "Service":
-        page = <HomeScreen title="Service" backgroundImage={street} next="Loyalty" back="Dedication" move={this.changeHomepage}/>
-        break;
-      case "Loyalty":
-        page = <HomeScreen title="Loyalty" backgroundImage={bridge} next="Service" back="Hard Working" move={this.changeHomepage}/>
-        break;
+    let pageImage = this.pageData[this.state.position].image;
+    let pageTitle = this.pageData[this.state.position].title;
 
-      default:
-
-    }
+    // switch (this.state.homePage) {
+    //   case "Main":
+    //     page = <HomeScreen title="Katharine Decker" backgroundImage={flowers} left="Hard Working" right="Dedication" move={this.changeHomepage}/>
+    //     break;
+    //   case "Dedication":
+    //     page = <HomeScreen title="Dedication" backgroundImage={lab} left="Main" right="Service" move={this.changeHomepage}/>
+    //     break;
+    //   case "Hard Working":
+    //     page = <HomeScreen title="Hard Working" backgroundImage={court} left="Loyalty" right="Main" move={this.changeHomepage}/>
+    //     break;
+    //   case "Service":
+    //     page = <HomeScreen title="Service" backgroundImage={street} left="Loyalty" right="Dedication" move={this.changeHomepage}/>
+    //     break;
+    //   case "Loyalty":
+    //     page = <HomeScreen title="Loyalty" backgroundImage={bridge} left="Service" right="Hard Working" move={this.changeHomepage}/>
+    //     break;
+    //
+    //   default:
+    //
+    // }
     return (
-        page
+        <HomeScreen title={pageTitle} backgroundImage={pageImage} move={this.changeHomepage}/>
     )
   }
 }
@@ -51,10 +79,20 @@ function HomeScreen(props){
     backgroundImage: `url(${props.backgroundImage})`
   };
   return (
-    <div  className="homepage" style={backgroundStyle}>
-      <button className="nextbtn" onClick={() => props.move(props.next)}> {props.next} </button>
-      <button className="backbtn" onClick={() => props.move(props.back)}> {props.back} </button>
-      <h1 className="homepageTitle">{props.title}</h1>
+    <div  className="homepage">
+      <div className="leftbody">
+        <button className="nextbtn" onClick={() => props.move("back")}> &#x2190; </button>
+      </div>
+      <div className="homeCenter">
+        <div className="homeTitle">
+          <h1 className="homepageTitle">{props.title}</h1>
+        </div>
+        <div className="homeImage" style={backgroundStyle}>
+        </div>
+      </div>
+      <div className="rightBody">
+          <button className="backbtn" onClick={() => props.move("up")}> &#x2192; </button>
+      </div>
     </div>
   )
 }

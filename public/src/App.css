@@ -80,7 +80,12 @@ input:active, button:active, submit:active{
   width: 15%;
   min-height: calc(100vh - 170px);
 }
-.homepage{
+.hompage{
+  width: 100%;
+  height: calc(100vh - 170px);
+}
+.homeCenter{
+  box-sizing: border-box;
   /*background-image: url("./images/court.jpg");*/
   float: left;
   background-size: cover;
@@ -95,33 +100,45 @@ input:active, button:active, submit:active{
   align-items: center;
   position: relative;*/
 }
+.homeImage{
+  width: 100%;
+  height: calc(100vh - 265px);
+  background-size: cover;
+  background-position: center;
+}
+
 .rightbody{
   float: right;
   width: 15%;
   minheight: calc(100vh - 170px);
 }
 .homepageTitle{
-  padding-top: 40px;
+  margin-top: -.1px;
   opacity: .8;
   font-size: 60px;
   color: Gray;
-  width: 40%;
+  font-style: italic;
+  font-family: cursive;
+  width:100%;
+  height: 55px;
 }
 .nextbtn, .backbtn{
   background-color: Transparent !important;
   font-family: fantasy;
   font-style: oblique;
   margin-top: 30px;
-  color: white;
+  color: gray;
   font-size: 20px;
 }
 .nextbtn{
   margin-right: 20px;
   float: right;
+  font-size: 40px;
 }
 .backbtn {
   margin-left: 20px;
   float: left;
+  font-size: 40px;
 }
 /*About Page Styles*/
 .about {
