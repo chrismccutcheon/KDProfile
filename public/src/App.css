@@ -75,20 +75,54 @@ input:active, button:active, submit:active{
   width: 100%;
 }
 /*Home Page Styles*/
+.leftbody{
+  float: left;
+  width: 15%;
+  min-height: calc(100vh - 170px);
+}
 .homepage{
   /*background-image: url("./images/court.jpg");*/
+  float: left;
   background-size: cover;
   background-position: center;
   margin-left: auto;
   height: calc(100vh - 170px);
   width: 70%;
   margin-right: auto;
-}
-.homeImg{
-  vertical-align: middle;
-  width: 100%;
-}
 
+  /*display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  position: relative;*/
+}
+.rightbody{
+  float: right;
+  width: 15%;
+  minheight: calc(100vh - 170px);
+}
+.homepageTitle{
+  padding-top: 40px;
+  opacity: .8;
+  font-size: 60px;
+  color: Gray;
+  width: 40%;
+}
+.nextbtn, .backbtn{
+  background-color: Transparent !important;
+  font-family: fantasy;
+  font-style: oblique;
+  margin-top: 30px;
+  color: white;
+  font-size: 20px;
+}
+.nextbtn{
+  margin-right: 20px;
+  float: right;
+}
+.backbtn {
+  margin-left: 20px;
+  float: left;
+}
 /*About Page Styles*/
 .about {
   margin-left: 200px;
@@ -113,21 +147,14 @@ input:active, button:active, submit:active{
   font-family: 'Cormorant Upright';
 }
 
-.demo4 {
-    display: flex;
-    display: -webkit-flex;
-    align-items: center;
-    height: 700px;
-    position: relative;
-  }
 
-  .demo4-inner {
-    overflow: hidden;
-    position: relative;
-    margin: auto;
-  }
+/*.demo4-inner {
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+}
 
-  .demo4-photo {
-    position: absolute;
-    background-color: lightgray;
-  }
+.demo4-photo {
+  position: absolute;
+  background-color: lightgray;
+}*/
