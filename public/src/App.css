@@ -140,6 +140,7 @@ input:active, button:active, submit:active{
   float: left;
   font-size: 40px;
 }
+
 /*About Page Styles*/
 .about {
   margin-left: 200px;
@@ -163,15 +164,9 @@ input:active, button:active, submit:active{
   font-size: 15px;
   font-family: 'Cormorant Upright';
 }
-
-
-/*.demo4-inner {
-  overflow: hidden;
-  position: relative;
-  margin: auto;
+/* Resume Page style */
+.resumeBody{
+  display: inline-block;
+  width: 70%;
+  height: calc(100vh - 170px);
 }
-
-.demo4-photo {
-  position: absolute;
-  background-color: lightgray;
-}*/

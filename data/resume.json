@@ -1,0 +1,24 @@
+{
+  "resume": {
+    "education":[{
+        "title": "DeVos Sports Business Management Program",
+        "school": "University of Central Florida",
+        "location": "Orlando, Florida",
+        "degree": "Masters Degree in Business and Sports Business Management",
+        "gradDate": "December 2017"
+      },{
+        "school": "Santa Clara University",
+        "location": "Santa Clara California",
+        "misc": "Honors: 1 of 8 students chosen to join the University Political Science Honors Society",
+        "gradDate": "June 2015"
+      }],
+      "experience":[{
+        "employer": "Orlando Magic, Orlando, FL",
+        "title": "Premium Guest Service Representative",
+        "roles": ["Assist Premium clientele at all events at Amway Center (Orlando Magic home games, concerts, family shows)", "Assist in Premium areas by checking tickets, taking complaints, troubleshooting during the event, and ensuring Premium clientele’s needs are met throughout event.", "Assist with pre-event needs and set-up. Assist premium clientele on different levels of Amway Center throughout event. Break down post-event."],
+        "duration": "September 2016 to Present"
+      },{
+
+      }]
+  }
+}
