@@ -80,19 +80,13 @@ input:active, button:active, submit:active{
   width: 100%;
 }
 /*Home Page Styles*/
-.leftbody{
-  float: left;
-  width: 15%;
-  min-height: calc(100vh - 170px);
-}
 .hompage{
   width: 100%;
   height: calc(100vh - 170px);
 }
-.homeCenter{
+.homeSlides{
+  display: none;
   box-sizing: border-box;
-  /*background-image: url("./images/court.jpg");*/
-  float: left;
   background-size: cover;
   background-position: center;
   margin-left: auto;
@@ -105,18 +99,7 @@ input:active, button:active, submit:active{
   align-items: center;
   position: relative;*/
 }
-.homeImage{
-  width: 100%;
-  height: calc(100vh - 265px);
-  background-size: cover;
-  background-position: center;
-}
 
-.rightbody{
-  float: right;
-  width: 15%;
-  minheight: calc(100vh - 170px);
-}
 .homepageTitle{
   margin-top: -.1px;
   opacity: .8;

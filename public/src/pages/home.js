@@ -7,70 +7,33 @@ import bridge from '../images/bridge.jpg';
 class Home extends Component {
   constructor(props){
     super(props);
-    this.changeHomepage = this.changeHomepage.bind(this);
-    this.pageData = [{
-      title: "Katharine Decker",
-      image: bridge
-    },{
-      title: "Dedicated",
-      image: lab
-    },{
-      title: "Passionate",
-      image: flowers
-    }]
-    this.state = {position: 0};
+    this.pageData = [bridge, lab, flowers];
   }
-  changeHomepage(action){
-    var curPos = this.state.position;
-    if(action === "up"){
-      if(curPos === this.pageData.length-1){
-        curPos = 0;
-      } else {
-        curPos++;
-      }
-    } else {
-      if (curPos === 0) {
-        curPos = this.pageData.length-1;
-      }
-      curPos--;
-    }
-    this.setState({position: curPos});
-  }
-
-
   render(){
-
-    let pageImage = this.pageData[this.state.position].image;
-    let pageTitle = this.pageData[this.state.position].title;
-
     return (
-        <HomeScreen title={pageTitle} backgroundImage={pageImage} move={this.changeHomepage}/>
+        <HomeScreen backgroundImages={this.pageData} />
     )
   }
 }
 
 function HomeScreen(props){
-  const backgroundStyle = {
-    backgroundImage: `url(${props.backgroundImage})`
-  };
+  var homeStyles = [];
+  var titles = ["Katharine Decker","Dedicated","Loyalty"];
+  for(var i = 0; i < props.backgroundImages.length; i++){
+    var curImage = props.backgroundImages[i];
+    homeStyles.push({style: {'backgroundImage': `url(${curImage})`}, index: i, title: titles[i]});
+  }
+  const homepages = homeStyles.map((page) =>
+    <div key={page.index.toString()} className="homeSlides" style={page.style}>
+      <h1 className="homepageTitle">{page.title}</h1>
+    </div>
+  );
+  console.log(homepages);
   return (
-    <div  className="homepage">
-      <div className="leftbody">
-        <button className="nextbtn" onClick={() => props.move("back")}> &#x2190; </button>
-      </div>
-      <div className="homeCenter">
-        <div className="homeTitle">
-          <h1 className="homepageTitle">{props.title}</h1>
-        </div>
-        <div className="homeImage" style={backgroundStyle}>
-        </div>
-      </div>
-      <div className="rightBody">
-          <button className="backbtn" onClick={() => props.move("up")}> &#x2192; </button>
-      </div>
+    <div  className="homepage" >
+      {homepages}
     </div>
   )
 }
-
 
 export default Home;

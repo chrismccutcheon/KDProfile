@@ -3,7 +3,10 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.send("You have connected with the server");
+  res.json({
+      sucess: "Test",
+    });
+    console.log("here");
   //res.render('index', { title: 'Express' });
 });
 
