@@ -53,6 +53,11 @@ input:active, button:active, submit:active{
   transform: translateY(4px);
 }
 /*Navabar button styles*/
+
+.navBtn{
+  height: 70px;
+  padding-bottom:  20px;
+}
 .navbar button{
   font-family: Playfair Display;
   font-size: 15px;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import flowers from '../images/flowers.jpg';
 import lab from '../images/lab.jpg';
-import street from '../images/street.jpg';
+// import street from '../images/street.jpg';
 import bridge from '../images/bridge.jpg';
 
 class Home extends Component {

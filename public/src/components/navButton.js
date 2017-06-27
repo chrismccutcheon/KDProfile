@@ -3,14 +3,14 @@ import React, { Component } from 'react';
 
 class NavButton extends Component {
   render(){
-    var style = null;
+    var backgroundStyle = null;
     if(this.props.isSelected){
-      style={
+      backgroundStyle={
         backgroundColor: 'white'
       }
     }
     return (
-      <button id={this.props.id} onClick={() => this.props.click(this.props.name)}>{this.props.name}</button>
+      <button className="navBtn" style={backgroundStyle} id={this.props.id} onClick={() => this.props.click(this.props.name)}>{this.props.name}</button>
     )
   }
 }
