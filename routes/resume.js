@@ -4,8 +4,16 @@ var jsonfile = require("jsonfile");
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  console.log("Hi there");
   var file = './data/resume.json';
+  jsonfile.readFile(file, function(err, obj) {
+    if(obj){
+      res.json(obj);
+    }
+  })
+});
+
+router.get('/portfolio', function(req, res, next){
+  var file = './data/portfolio.json';
   jsonfile.readFile(file, function(err, obj) {
     if(obj){
       res.json(obj);

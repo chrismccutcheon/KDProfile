@@ -127,8 +127,9 @@ input:active, button:active, submit:active{
 
 /*About Page Styles*/
 .about {
-  margin-left: 200px;
-  margin-right: 200px;
+  width: 70%;
+  box-sizing: border-box;
+  display: inline-block;
 }
 .about h4{
   font-family: 'Cormorant Upright';
@@ -168,9 +169,36 @@ input:active, button:active, submit:active{
 .date{
   float: right;
 }
-.eduElem{
-
-}
 .rolesList{
   line-height: 24px;
+}
+
+/* These styles are for the porfolio page*/
+.portfolio {
+  width: 70%;
+  box-sizing: border-box;
+  display: inline-block;
+  min-height: calc(100vh - 170px);
+}
+.portfolio h4{
+  font-family: 'Cormorant Upright';
+  font-size: 22px;
+  font-style: italic;
+}
+.portfolio h2{
+  font-family: 'BenchNine';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+}
+.portfolio p{
+  color: Gray;
+  line-height: 25px;
+  text-align: left !important;
+  font-size: 15px;
+  font-family: 'Cormorant Upright';
+}
+
+.portImg{
+  width: 100%;
 }
