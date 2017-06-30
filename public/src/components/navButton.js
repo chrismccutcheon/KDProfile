@@ -10,7 +10,10 @@ class NavButton extends Component {
       }
     }
     return (
-      <button className="navBtn" style={backgroundStyle} id={this.props.id} onClick={() => this.props.click(this.props.name)}>{this.props.name}</button>
+      <button className="navBtn" style={backgroundStyle} id={this.props.id} onClick={() => {
+        this.props.click(this.props.name);
+        this.props.selected(this.props.id);
+      }}>{this.props.name}</button>
     )
   }
 }

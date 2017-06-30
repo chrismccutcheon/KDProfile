@@ -32,10 +32,6 @@
   vertical-align: middle;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 /*Website button styles*/
 button:focus {
   outline:0;
@@ -154,7 +150,27 @@ input:active, button:active, submit:active{
 }
 /* Resume Page style */
 .resumeBody{
+  font-family: 'Cormorant Upright';
+  font-size: 20px;
+  box-sizing: border-box;
   display: inline-block;
+  text-align: left !important;
   width: 70%;
-  height: calc(100vh - 170px);
+  min-height: calc(100vh - 170px);
+}
+.resumeElem{
+  padding-left: 20px;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+  width: 100%;
+  line-height: 5px;
+}
+.date{
+  float: right;
+}
+.eduElem{
+
+}
+.rolesList{
+  line-height: 24px;
 }
