@@ -5,9 +5,9 @@ class Footer extends Component {
     return (
       <div className="footer">
         <nav>
-          <button>Linkedin</button>
-          <button>Facebook</button>
-          <button>Instagram</button>
+          <a href="https://www.linkedin.com/in/katharinedecker/">Linkedin</a>
+          <a href="https://www.facebook.com/katharine.decker">Facebook</a>
+          <a href="https://www.instagram.com/kdbug1992/?hl=en">Instagram</a>
         </nav>
       </div>
     )

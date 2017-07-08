@@ -20,8 +20,6 @@
 
 .App-intro {
   font-size: large;
-
-
   /* equal to footer height */
 }
 
@@ -33,28 +31,33 @@
 }
 
 /*Website button styles*/
-button:focus {
+a {
+  font-family: Playfair Display;
+  text-decoration: none;
+  margin-left: 15px;
+}
+button:focus, a:focus {
   outline:0;
 }
-input, button, submit {
+input, button, submit, a {
   border:none;
   background-color: #efefef;
   color: #303030;
 }
-input:hover, button:hover, submit:hover{
+input:hover, button:hover, submit:hover, a:hover {
   cursor: pointer;
   color: Gray;
 }
-input:active, button:active, submit:active{
+input:active, button:active, submit:active, a:active {
   transform: translateY(4px);
 }
 /*Navabar button styles*/
 
-.navBtn{
+.navBtn {
   height: 70px;
   padding-bottom:  20px;
 }
-.navbar button{
+.navbar button {
   font-family: Playfair Display;
   font-size: 15px;
   letter-spacing: .3em;
@@ -106,7 +109,7 @@ input:active, button:active, submit:active{
   width:100%;
   height: 55px;
 }
-.nextbtn, .backbtn{
+/*.nextbtn, .backbtn{
   background-color: Transparent !important;
   font-family: fantasy;
   font-style: oblique;
@@ -123,7 +126,7 @@ input:active, button:active, submit:active{
   margin-left: 20px;
   float: left;
   font-size: 40px;
-}
+}*/
 
 /*About Page Styles*/
 .about {
@@ -201,4 +204,30 @@ input:active, button:active, submit:active{
 
 .portImg{
   width: 100%;
+}
+
+/*Contact page*/
+.contact{
+  width: 60%;
+  box-sizing: border-box;
+  display: inline-block;
+  min-height: calc(100vh - 170px);
+}
+
+.contact p{
+  font-family: 'Cormorant Upright';
+  text-align: left;
+}
+
+.contact h4{
+  text-align: left;
+  font-family: 'Cormorant Upright';
+  font-size: 18px;
+}
+
+.contact h2{
+  font-family: 'BenchNine';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
 }

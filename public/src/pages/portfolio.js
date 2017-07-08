@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Images from '../images/images';
 
 class Portfolio extends Component {
   constructor(props){
@@ -42,10 +42,19 @@ class Portfolio extends Component {
       var portElems = data.portfolio.map((elem, j) => {
         return (<div key={j.toString()+"port"} className="resumeElem">
           <h4 className="dataElem">{elem.title}</h4>
-          {elem.paragraphs.map((role, i)=>
-              <p key={i.toString()+ "para"}>{role}</p>)
+            {elem.paragraphs.map((role, i)=>
+              <p key={i.toString()+ "para"}>{role}</p>
+            )
             }
-            <img className="portImg" src={require("../images/rainbowrun.jpg")} />
+            {elem.images.map((photo, i)=> {
+              console.log(photo.img);
+              return (<div key={i.toString()+"propImg"}>
+                <img key={i.toString()+ "photo"} className="portImg" src={Images[photo.img[i]]} />
+                <p key={i.toString()+ "desc"}>{photo.desc}</p>
+              </div>)
+            })
+            }
+
         </div>)
       });
     }

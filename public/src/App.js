@@ -4,8 +4,6 @@ import NavBar from "./components/navbar";
 import Body from './components/body';
 import './App.css';
 
-// import logo from './logo.svg';
-// <img src={logo} className="App-logo" alt="logo" />
 
 class App extends Component {
   constructor(props){
