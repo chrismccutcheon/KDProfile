@@ -12,7 +12,6 @@ class Portfolio extends Component {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
        }
-
     }).then(this.checkStatus)
     .then(this.parseJSON)
     .then(this.setResumeData.bind(this));
@@ -49,7 +48,7 @@ class Portfolio extends Component {
             {elem.images.map((photo, i)=> {
               console.log(photo.img);
               return (<div key={i.toString()+"propImg"}>
-                <img key={i.toString()+ "photo"} className="portImg" src={Images[photo.img[i]]} />
+                <img key={i.toString()+ "photo"} className="portImg" alt="logo" src={Images[photo.img]} />
                 <p key={i.toString()+ "desc"}>{photo.desc}</p>
               </div>)
             })

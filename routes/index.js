@@ -6,7 +6,6 @@ router.get('/', function(req, res, next) {
   res.json({
       sucess: "Test",
     });
-    console.log("here");
   //res.render('index', { title: 'Express' });
 });
 
