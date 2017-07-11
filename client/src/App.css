@@ -25,7 +25,7 @@
 
 .App-body{
   margin-top: 70px;
-  min-height: calc(100vh - 170px);
+  min-height: calc(100vh - 150px);
   display: block;
   vertical-align: middle;
 }
@@ -75,22 +75,27 @@ input:active, button:active, submit:active, a:active {
   box-sizing: border-box;
   padding-top: 20px;
   background-color: #efefef;
-  height: 100px;
+  height: 80px;
   width: 100%;
 }
 /*Home Page Styles*/
 .hompage{
   width: 100%;
-  height: calc(100vh - 170px);
+  height: calc(100vh - 150px);
+}
+.homeScreen{
+  box-sizing: border-box;
+  height: calc(100vh - 150px);
 }
 .homeSlides{
   display: none;
   box-sizing: border-box;
   background-size: cover;
-  background-position: center;
+  /*background-position: center;*/
+  background-position: center 34%;
   margin-left: auto;
-  height: calc(100vh - 170px);
-  width: 70%;
+  height: calc(100vh - 150px);
+  width: 65%;
   margin-right: auto;
 
   /*display: flex;
@@ -109,24 +114,10 @@ input:active, button:active, submit:active, a:active {
   width:100%;
   height: 55px;
 }
-/*.nextbtn, .backbtn{
-  background-color: Transparent !important;
-  font-family: fantasy;
-  font-style: oblique;
-  margin-top: 30px;
-  color: gray;
-  font-size: 20px;
+.hometitle{
+  font-family: 'Cormorant Upright';
+  color: Gray;
 }
-.nextbtn{
-  margin-right: 20px;
-  float: right;
-  font-size: 40px;
-}
-.backbtn {
-  margin-left: 20px;
-  float: left;
-  font-size: 40px;
-}*/
 
 /*About Page Styles*/
 .about {
@@ -211,7 +202,7 @@ input:active, button:active, submit:active, a:active {
   width: 60%;
   box-sizing: border-box;
   display: inline-block;
-  min-height: calc(100vh - 170px);
+  min-height: calc(100vh - 150px);
 }
 
 .contact p{

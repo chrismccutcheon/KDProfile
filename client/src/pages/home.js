@@ -14,14 +14,17 @@ class Home extends Component {
   }
   render(){
     return (
+      <div className="homeScreen">
+        <h1 className="hometitle">Katharine Decker</h1>
         <HomeScreen backgroundImages={this.pageData} />
+      </div>
     )
   }
 }
 
 function HomeScreen(props){
   var homeStyles = [];
-  var titles = ["Katharine Decker","Dedicated","Loyalty"];
+  var titles = ["","",""];
   for(var i = 0; i < props.backgroundImages.length; i++){
     var curImage = props.backgroundImages[i];
     homeStyles.push({style: {'backgroundImage': `url(${curImage})`}, index: i, title: titles[i]});
@@ -50,7 +53,7 @@ function carousel() {
       if (myIndex > x.length) {myIndex = 1}
       x[myIndex-1].style.display = "block";
     }
-    setTimeout(carousel, 4000); // Change image every 2 seconds
+    setTimeout(carousel, 8000); // Change image every 2 seconds
 }
 
 
