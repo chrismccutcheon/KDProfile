@@ -55,6 +55,7 @@ input:active, button:active, submit:active, a:active {
 
 .navBtn {
   height: 70px;
+  width: 17%;
   padding-bottom:  20px;
 }
 .navbar button {
@@ -97,11 +98,6 @@ input:active, button:active, submit:active, a:active {
   height: calc(100vh - 150px);
   width: 65%;
   margin-right: auto;
-
-  /*display: flex;
-  display: -webkit-flex;
-  align-items: center;
-  position: relative;*/
 }
 
 .homepageTitle{
