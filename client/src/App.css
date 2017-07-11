@@ -1,3 +1,7 @@
+.html, body{
+  width: 100%;
+  height: 100%;
+}
 .App {
   text-align: center;
   height: 100%;
@@ -52,18 +56,19 @@ input:active, button:active, submit:active, a:active {
   transform: translateY(4px);
 }
 /*Navabar button styles*/
-
-.navBtn {
+.navbar{
+  width: 100%;
   height: 70px;
-  width: 17%;
-  padding-bottom:  20px;
 }
-.navbar button {
+.navBtn {
+  box-sizing: border-box;
+  height: 100%;
+  width: 19%;
+  padding-bottom:  25px;
   font-family: Playfair Display;
   font-size: 15px;
   letter-spacing: .3em;
-  padding-top: 20px;
-  margin-left: 30px;
+  padding-top: 25px;
 }
 
 /*Footer styles*/
