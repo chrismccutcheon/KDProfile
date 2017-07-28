@@ -33,7 +33,12 @@ class Body extends Component {
     }
     return (
       <div className="App-body">
-        {page}
+        {/* {page} */}
+        <Home />
+        <About />
+        <Resume />
+        <Portfolio />
+        <Contact />
       </div>
     );
   }

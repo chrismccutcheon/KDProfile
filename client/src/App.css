@@ -91,7 +91,7 @@ input:active, button:active, submit:active, a:active {
 }
 .homeScreen{
   box-sizing: border-box;
-  height: calc(100vh - 150px);
+  height: calc(100vh);
 }
 .homeSlides{
   display: none;
@@ -125,6 +125,7 @@ input:active, button:active, submit:active, a:active {
   width: 70%;
   box-sizing: border-box;
   display: inline-block;
+  height: calc(100vh);
 }
 .about h4{
   font-family: 'Cormorant Upright';
