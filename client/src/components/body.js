@@ -10,30 +10,8 @@ import Contact from "../pages/contact";
 
 class Body extends Component {
   render() {
-    let page = null;
-    switch (this.props.type) {
-      case "Home":
-        page = <Home />
-        break;
-      case "About":
-        page = <About />
-        break;
-      case "Resume":
-        page = <Resume />
-        break;
-      case "Portfolio":
-        page = <Portfolio />
-        break;
-      case "Contact":
-        page = <Contact />
-        break;
-
-      default:
-
-    }
     return (
       <div className="App-body">
-        {/* {page} */}
         <Home />
         <About />
         <Resume />

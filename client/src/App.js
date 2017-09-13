@@ -14,7 +14,6 @@ class App extends Component {
   handleNavClick(pageClicked){
     this.setState({page: pageClicked})
   }
-
   render() {
     return (
       <div className="App">
