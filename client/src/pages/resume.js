@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
-
-class Resume extends Component {
-  constructor(props){
-    super(props);
-    this.state = {res: null};
+import {connect} from 'react-redux';
+import {fetchResume, fetchedResume} from './../actions/resumeActions';
+@connect((store)=>{
+  return{
+    resume: store.resume.res
   }
+})
+class Resume extends Component {
   componentDidMount(){
-    console.log("Hello there");
-    return fetch(`/resume`,{
+    this.props.dispatch(fetchResume);
+    fetch(`/resume`,{
       headers : {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
        }
-
     }).then(this.checkStatus)
     .then(this.parseJSON)
-    .then(this.setResumeData.bind(this));
+    .then((data)=>this.props.dispatch(fetchedResume(data)));
   }
   checkStatus(response) {
     if (response.status >= 200 && response.status < 300) {
@@ -27,17 +28,11 @@ class Resume extends Component {
     console.log(error); // eslint-disable-line no-console
     throw error;
   }
-
   parseJSON(response) {
     return response.json();
   }
-  setResumeData(data){
-    this.setState({
-      res: data
-    })
-  }
   render(){
-    const data = this.state.res;
+    const data = this.props.resume;
     console.log(data);
     if(data){
       var eduElems = data.resume.education.map((elem) => {

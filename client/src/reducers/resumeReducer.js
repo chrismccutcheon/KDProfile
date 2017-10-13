@@ -1,18 +1,18 @@
 export default function reducer(state={
-  page: "Home",
-  selected: "0",
+  res: null,
   fetching: false,
   fetched: false,
   error: false
 }, action){
   switch (action.type) {
-    case "SET_PAGE":
-      return {...state, page: action.payload}
+    case "FETCH_RESUME":
+      return {...state, fetching: true}
       break;
-    case "SET_SELECTED":
-      return {...state, selected: action.payload}
+    case "FETCHED_RESUME":
+      return {...state, fetching: false, fetched: true, res: action.payload}
       break;
     default:
+
   }
   return state;
 }

@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 import NavButton from './navButton';
-
+import {connect} from 'react-redux';
+import {setPage, setSelected} from './../actions/appActions';
+@connect((store)=>{
+  return{
+    page: store.app.page,
+    selected: store.app.selected
+  }
+})
 class NavBar extends Component {
-  constructor(props){
-    super(props);
-    this.changeSelected = this.changeSelected.bind(this);
-    this.state = {"selected": "0"};
-  }
-  changeSelected(postion){
-    console.log(postion);
-    this.setState({selected: postion});
-  }
   render(){
     return (
       <div className="navbar">
         <nav>
-          <NavButton isSelected={this.state.selected === "0" ? true : false} id="0" name="Home" click={this.props.click} selected={this.changeSelected}/>
-          <NavButton isSelected={this.state.selected === "1" ? true : false} id="1" name="About" click={this.props.click} selected={this.changeSelected}/>
-          <NavButton isSelected={this.state.selected === "2" ? true : false} id="2" name="Resume" click={this.props.click} selected={this.changeSelected}/>
-          <NavButton isSelected={this.state.selected === "3" ? true : false} id="3" name="Portfolio" click={this.props.click} selected={this.changeSelected}/>
-          <NavButton isSelected={this.state.selected === "4" ? true : false} id="4" name="Contact" click={this.props.click} selected={this.changeSelected}/>
+          <NavButton isSelected={this.props.selected === "0" ? true : false}  name="Home" click={()=>this.props.dispatch(setPage("Home"))} selected={()=>this.props.dispatch(setSelected("0"))}/>
+          <NavButton isSelected={this.props.selected === "1" ? true : false}  name="About" click={()=>this.props.dispatch(setPage("About"))} selected={()=>this.props.dispatch(setSelected("1"))}/>
+          <NavButton isSelected={this.props.selected === "2" ? true : false}  name="Resume" click={()=>this.props.dispatch(setPage("Resume"))} selected={()=>this.props.dispatch(setSelected("2"))}/>
+          <NavButton isSelected={this.props.selected === "3" ? true : false}  name="Portfolio" click={()=>this.props.dispatch(setPage("Portfolio"))} selected={()=>this.props.dispatch(setSelected("3"))}/>
+          <NavButton isSelected={this.props.selected === "4" ? true : false}  name="Contact" click={()=>this.props.dispatch(setPage("Contact"))} selected={()=>this.props.dispatch(setSelected("4"))}/>
         </nav>
       </div>
     )
