@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
 import Images from '../images/images';
-
-class Portfolio extends Component {
-  constructor(props){
-    super(props);
-    this.state = {res: null};
+import {connect} from 'react-redux';
+import {fetchPortfolio, fetchedPortfolio} from './../actions/portfolioActions';
+@connect((store)=>{
+  return{
+    portfolio: store.portfolio.portfolio
   }
+})
+class Portfolio extends Component {
   componentDidMount(){
-    return fetch(`/resume/portfolio`,{
+    this.props.dispatch(fetchPortfolio());
+    fetch(`/resume/portfolio`,{
       headers : {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
        }
     }).then(this.checkStatus)
     .then(this.parseJSON)
-    .then(this.setResumeData.bind(this));
+    .then((data)=>{
+      console.log(data);
+      this.props.dispatch(fetchedPortfolio(data))
+    });
   }
   checkStatus(response) {
     if (response.status >= 200 && response.status < 300) {
@@ -26,17 +32,11 @@ class Portfolio extends Component {
     console.log(error); // eslint-disable-line no-console
     throw error;
   }
-
   parseJSON(response) {
     return response.json();
   }
-  setResumeData(data){
-    this.setState({
-      res: data
-    })
-  }
   render(){
-    const data = this.state.res;
+    const data = this.props.portfolio;
     if(data){
       var portElems = data.portfolio.map((elem, j) => {
         return (<div key={j.toString()+"port"} className="resumeElem">

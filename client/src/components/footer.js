@@ -8,6 +8,7 @@ class Footer extends Component {
           <a href="https://www.linkedin.com/in/katharinedecker/">Linkedin</a>
           <a href="https://www.facebook.com/katharine.decker">Facebook</a>
           <a href="https://www.instagram.com/kdbug1992/?hl=en">Instagram</a>
+          <a href="/auth/google">Login as Katie</a>
         </nav>
       </div>
     )

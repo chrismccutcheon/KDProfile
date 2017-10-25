@@ -5,9 +5,6 @@ import Resume from "../pages/resume";
 import Portfolio from "../pages/portfolio";
 import Contact from "../pages/contact";
 
-// import logo from './logo.svg';
-// <img src={logo} className="App-logo" alt="logo" />
-
 class Body extends Component {
   render() {
     return (

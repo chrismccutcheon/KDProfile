@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import EducationView from './components/educationView';
+import ExperienceView from './components/experienceView';
+import VolunteerView from './components/volunteerView';
+import OtherView from './components/otherView';
 import {connect} from 'react-redux';
 import {fetchResume, fetchedResume} from './../actions/resumeActions';
 @connect((store)=>{
@@ -7,44 +12,29 @@ import {fetchResume, fetchedResume} from './../actions/resumeActions';
   }
 })
 class Resume extends Component {
-  componentDidMount(){
-    this.props.dispatch(fetchResume);
-    fetch(`/resume`,{
-      headers : {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
-    }).then(this.checkStatus)
-    .then(this.parseJSON)
-    .then((data)=>this.props.dispatch(fetchedResume(data)));
-  }
-  checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return response;
-    }
-    const error = new Error(`HTTP Error ${response.statusText}`);
-    error.status = response.statusText;
-    error.response = response;
-    console.log(error); // eslint-disable-line no-console
-    throw error;
-  }
-  parseJSON(response) {
-    return response.json();
+  async componentDidMount(){
+    this.props.dispatch(fetchResume());
+    const edu = await axios.get('/api/education');
+    const exp = await axios.get('/api/experience');
+    const vol = await axios.get('/api/volunteering');
+    const other = await axios.get('/api/other');
+    this.props.dispatch(fetchedResume({
+      resume: {
+        education: edu.data,
+        experience: exp.data,
+        volunteering: vol.data,
+        otherExp: other.data,
+      }
+    }));
   }
   render(){
     const data = this.props.resume;
-    console.log(data);
     if(data){
       var eduElems = data.resume.education.map((elem) => {
         if(elem.title){
-          return (<div key={elem.id.toString()+"edu"} className="resumeElem">
-            <h5 className="date">{elem.gradDate}</h5>
-            <h5 className="eduElem">{elem.title}</h5>
-            <h5 className="eduElem">{elem.school} | {elem.location}</h5>
-            <h5 className="eduElem">{elem.degree}</h5>
-          </div>)
+          return <EducationView gradDate={elem.gradDate} title={elem.title} school={elem.school} degree={elem.degree} id={elem._id} />;
         } else {
-          return (<div key={elem.id.toString()+"exp"} className="resumeElem">
+          return (<div key={elem._id.toString()+"exp"} className="resumeElem">
             <h5 className="date">{elem.gradDate}</h5>
             <h5 className="eduElem">{elem.school} | {elem.location}</h5>
             <h5 className="eduElem">{elem.degree}</h5>
@@ -54,7 +44,7 @@ class Resume extends Component {
       });
       var profElems = data.resume.experience.map((elem) => {
         return (
-          <div key={elem.id.toString()+"exp"} className="resumeElem">
+          <div key={elem._id.toString()+"exp"} className="resumeElem">
             <h5 className="date">{elem.duration}</h5>
             <h5 className="expElem">{elem.employer}</h5>
             <h4 className="expElem">{elem.title} </h4>
@@ -68,7 +58,7 @@ class Resume extends Component {
       });
       var volElems = data.resume.volunteering.map((elem) => {
         return (
-          <div key={elem.id.toString()+"exp"} className="resumeElem">
+          <div key={elem._id.toString()+"exp"} className="resumeElem">
             <h5 className="date">{elem.duration}</h5>
             <h5 className="expElem">{elem.organization}</h5>
             <ul className="rolesList">{
