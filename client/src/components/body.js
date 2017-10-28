@@ -4,6 +4,7 @@ import About from "../pages/about";
 import Resume from "../pages/resume";
 import Portfolio from "../pages/portfolio";
 import Contact from "../pages/contact";
+import Admin from "../pages/admin";
 
 class Body extends Component {
   render() {
@@ -14,6 +15,7 @@ class Body extends Component {
         <Resume />
         <Portfolio />
         <Contact />
+        <Admin />
       </div>
     );
   }

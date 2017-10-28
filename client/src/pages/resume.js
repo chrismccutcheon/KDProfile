@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import EducationView from './components/educationView';
-import ExperienceView from './components/experienceView';
-import VolunteerView from './components/volunteerView';
-import OtherView from './components/otherView';
+import EducationView from './components/views/educationView';
+import ExperienceView from './components/views/experienceView';
+import VolunteerView from './components/views/volunteerView';
+import OtherView from './components/views/otherView';
 import {connect} from 'react-redux';
 import {fetchResume, fetchedResume} from './../actions/resumeActions';
 @connect((store)=>{

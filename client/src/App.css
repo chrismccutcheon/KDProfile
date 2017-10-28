@@ -224,3 +224,18 @@ input:active, button:active, submit:active, a:active {
   font-weight: 300;
   font-size: 30px;
 }
+
+.admin {
+  text-align: left;
+  width: 70%;
+  box-sizing: border-box;
+  display: inline-block;
+  height: calc(100vh);
+}
+.admin h2{
+  text-align: center;
+  font-family: 'BenchNine';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+}
