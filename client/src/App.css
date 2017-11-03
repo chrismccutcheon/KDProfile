@@ -43,16 +43,16 @@ a {
 button:focus, a:focus {
   outline:0;
 }
-input, button, submit, a {
+button, submit, a {
   border:none;
   background-color: #efefef;
   color: #303030;
 }
-input:hover, button:hover, submit:hover, a:hover {
+button:hover, submit:hover, a:hover {
   cursor: pointer;
   color: Gray;
 }
-input:active, button:active, submit:active, a:active {
+button:active, submit:active, a:active {
   transform: translateY(4px);
 }
 /*Navabar button styles*/
@@ -238,4 +238,22 @@ input:active, button:active, submit:active, a:active {
   font-style: normal;
   font-weight: 300;
   font-size: 30px;
+}
+input:hover{
+  cursor: auto;
+}
+
+.formInput{
+  width: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.formInput input{
+  padding: 6px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }

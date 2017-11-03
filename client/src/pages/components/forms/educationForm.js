@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class EducationForm extends Component {
   render(){
     return (
-      <form className="educationInput">
+      <div className="formInput">
         <input className="inputTitle" type="text" value={this.props.title}/>
         <br />
         <input className="inputSchool" type="text" value={this.props.school} />
@@ -16,7 +16,7 @@ class EducationForm extends Component {
         <br />
         <input className="inputMisc" type="text" value={this.props.misc}/>
         <br />
-      </form>
+      </div>
     )
   }
 }

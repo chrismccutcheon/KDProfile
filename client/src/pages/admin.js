@@ -20,7 +20,6 @@ class Admin extends Component {
   // }
 
   render(){
-    console.log(this.props.resume);
     var educationForms = null;
     var experienceForms = null;
     if(this.props.resume){
@@ -30,15 +29,16 @@ class Admin extends Component {
         })
       }
       if(this.props.resume.resume.experience.length > 0){
-        experienceForms = this.props.resume.resume.experience.map(item=>{
-          <ExperienceForm onChange={(type, pos, inputType, value, roleIndex) => this.props.dispatch(changeTempRes(type, pos, inputType, value, roleIndex))} title={item.title} employer={item.employer} duration={item.duration} />
-        })
+        experienceForms = this.props.resume.resume.experience.map((item, index)=>
+          <ExperienceForm key={index} onChange={(type, pos, inputType, value, roleIndex) => this.props.dispatch(changeTempRes(type, pos, inputType, value, roleIndex))} title={item.title} roles={item.roles} employer={item.employer} duration={item.duration} />
+        )
       }
     }
     return (
       <div className="admin">
         <h2>Admin Page</h2>
         {educationForms ? educationForms : ""}
+        {experienceForms ? experienceForms : ""}
       </div>
     )
   }
