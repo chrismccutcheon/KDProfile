@@ -26,8 +26,8 @@ class App extends Component {
           <div className="App-header">
             <NavBar />
           </div>
-          <Route exact path="/" render={(props) => (<Body  isAdmin={false}/>)} />
-          <Route path="/admin" exact render={(props) => (<Admin  isAdmin={true}/>)} />
+          <Route exact path="/" render={(props) => (<Body />)} />
+          <Route path="/admin" exact render={(props) => (<Admin  />)} />
           <Footer text="This is the footer"/>
         </div>
     </BrowserRouter>

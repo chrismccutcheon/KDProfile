@@ -18,7 +18,9 @@ class OtherForm extends Component {
         <br />
         <span>Roles</span>
         {roles}
-        <button>+</button>
+        <button onClick={()=>{
+          this.props.addRole("other", this.props.position)
+        }}>+</button>
       </div>
     )
   }

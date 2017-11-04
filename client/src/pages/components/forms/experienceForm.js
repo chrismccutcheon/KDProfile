@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 class ExperienceForm extends Component {
   render(){
     var roles = this.props.roles.map((item, index)=>
@@ -10,15 +9,17 @@ class ExperienceForm extends Component {
     );
     return (
       <div className="formInput">
-        <input className="inputTitle" type="text" value={this.props.title} onChange={(e)=>this.props.onChange("experience", this.props.position, "title", e.target.value)} />
+        <input className="defaultInput" type="text" value={this.props.title} onChange={(e)=>this.props.onChange("experience", this.props.position, "title", e.target.value, 0)} />
         <br />
-        <input className="inputEmployer" type="text" value={this.props.employer} onChange={(e)=>this.props.onChange("experience", this.props.position, "employer", e.target.value)} />
+        <input className="defaultInput" type="text" value={this.props.employer} onChange={(e)=>this.props.onChange("experience", this.props.position, "employer", e.target.value, 0)} />
         <br />
-        <input className="inputDuration" type="text" value={this.props.duration} onChange={(e)=>this.props.onChange("experience", this.props.position, "duration", e.target.value)} />
+        <input className="defaultInput" type="text" value={this.props.duration} onChange={(e)=>this.props.onChange("experience", this.props.position, "duration", e.target.value, 0)} />
         <br />
         <span>Roles</span>
         {roles}
-        <button>+</button>
+        <button onClick={()=>{
+          this.props.addRole("experience", this.props.position)
+        }}>+</button>
       </div>
     )
   }

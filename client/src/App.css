@@ -257,3 +257,25 @@ input:hover{
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+.defaultInput {
+   width: 300px;
+}
+.inputRoles {
+  width: 80%;
+}
+
+.addForm{
+  float: right;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  color: white;
+  background-color: #4ea030;
+}
+
+.addTitle{
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

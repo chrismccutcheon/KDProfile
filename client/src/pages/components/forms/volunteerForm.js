@@ -16,7 +16,9 @@ class VolunteerForm extends Component {
         <br />
         <span>Roles</span>
         {roles}
-        <button>+</button>
+        <button onClick={()=>{
+          this.props.addRole("volunteering", this.props.position)
+        }}>+</button>
       </div>
     )
   }
