@@ -4,17 +4,35 @@ class EducationForm extends Component {
   render(){
     return (
       <div className="formInput">
-        <input className="defaultInput" type="text" value={this.props.title}/>
+        <label>
+          Title:
+          <input className="defaultInput" onChange={(e)=>this.props.onChange("education", this.props.position, "title", e.target.value)} type="text" value={this.props.title}/>
+        </label>
         <br />
-        <input className="defaultInput" type="text" value={this.props.school} />
+        <label>
+          School:
+          <input className="defaultInput" onChange={(e)=>this.props.onChange("education", this.props.position, "school", e.target.value)} type="text" value={this.props.school} />
+        </label>
         <br />
-        <input className="defaultInput" type="text" value={this.props.location}/>
+        <label>
+          Location:
+          <input className="defaultInput" onChange={(e)=>this.props.onChange("education", this.props.position, "location", e.target.value)} type="text" value={this.props.location}/>
+        </label>
         <br />
-        <input className="defaultInput" type="text" value={this.props.degree}/>
+        <label>
+          Degree:
+          <input className="defaultInput" onChange={(e)=>this.props.onChange("education", this.props.position, "degree", e.target.value)} type="text" value={this.props.degree}/>
+        </label>
         <br />
-        <input className="defaultInput" type="text" value={this.props.gradDate}/>
+        <label>
+          Graduation Date:
+          <input className="defaultInput" onChange={(e)=>this.props.onChange("education", this.props.position, "gradDate", e.target.value)} type="text" value={this.props.gradDate}/>
+        </label>
         <br />
-        <input className="defaultInput" type="text" value={this.props.misc}/>
+        <label>
+          Other Information: 
+          <input className="defaultInput" onChange={(e)=>this.props.onChange("education", this.props.position, "misc", e.target.value)} type="text" value={this.props.misc}/>
+        </label>
         <br />
       </div>
     )

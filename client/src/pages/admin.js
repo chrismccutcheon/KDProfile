@@ -19,9 +19,9 @@ class Admin extends Component {
     var otherForms = null;
     if(this.props.resume){
       if(this.props.resume.resume.education.length > 0){
-        educationForms = this.props.resume.resume.education.map((item, index)=>{
-          <EducationForm addRole={(type, pos)=>this.props.dispatch(addTempRole(type, pos))} key={index} position={index} onChange={(type, pos, inputType, value) => this.props.dispatch(changeTempRes(type, pos, inputType, value))} title={item.title} school={item.school} location={item.location} degree={item.degree} gradDate={this.gradDate} misc={this.misc} />
-        })
+        educationForms = this.props.resume.resume.education.map((item, index)=>
+          <EducationForm key={index} position={index} onChange={(type, pos, inputType, value) => this.props.dispatch(changeTempRes(type, pos, inputType, value))} title={item.title} school={item.school} location={item.location} degree={item.degree} gradDate={this.gradDate} misc={this.misc} />
+        )
       }
       if(this.props.resume.resume.experience.length > 0){
         experienceForms = this.props.resume.resume.experience.map((item, index)=>
@@ -34,7 +34,7 @@ class Admin extends Component {
         )
       }
       if(this.props.resume.resume.otherExp.length > 0){
-        volunteerForms = this.props.resume.resume.other.map((item, index)=>
+        otherForms = this.props.resume.resume.otherExp.map((item, index)=>
           <OtherForm addRole={(type, pos)=>this.props.dispatch(addTempRole(type, pos))} key={index} position={index} onChange={(type, pos, inputType, value, roleIndex) => this.props.dispatch(changeTempRes(type, pos, inputType, value))} title={item.title} organization={item.organization} duration={item.duration} roles={item.roles} />
         )
       }
@@ -43,19 +43,19 @@ class Admin extends Component {
       <div className="admin">
         <h2>Admin Page</h2>
         <span className="addTitle">Education</span>
-        <button className="addForm" onClick={()=>addForm("education")}>+</button>
+        <button className="addForm" onClick={()=>this.props.dispatch(addForm("education"))}>+</button>
         {educationForms ? educationForms : ""}
-        <br /><hr />
+        <br /><hr className="sectionSeparator" />
         <span className="addTitle">Experience</span>
-        <button className="addForm" onClick={()=>addForm("experience")}>+</button>
+        <button className="addForm" onClick={()=>this.props.dispatch(addForm("experience"))}>+</button>
         {experienceForms ? experienceForms : ""}
-        <br /><hr />
+        <br /><hr className="sectionSeparator" />
         <span className="addTitle">Volunteering</span>
-        <button className="addForm" onClick={()=>addForm("volunteering")}>+</button>
+        <button className="addForm" onClick={()=>this.props.dispatch(addForm("volunteering"))}>+</button>
         {volunteerForms ? volunteerForms : ""}
-        <br /><hr />
+        <br /><hr className="sectionSeparator" />
         <span className="addTitle">Other</span>
-        <button className="addForm" onClick={()=>addForm("otherExp")}>+</button>
+        <button className="addForm" onClick={()=>this.props.dispatch(addForm("otherExp"))}>+</button>
         {otherForms ? otherForms : ""}
       </div>
     )

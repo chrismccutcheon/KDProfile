@@ -3,23 +3,35 @@ class ExperienceForm extends Component {
   render(){
     var roles = this.props.roles.map((item, index)=>
       <div key={index}>
-        <input className="inputRoles" key={index} type="text" value={item} onChange={(e)=> this.props.onChange("experience", this.props.position, "roles", e.target.value, index)}/>
+        <label>
+          -
+          <textarea className="inputRoles" key={index} type="text" value={item} onChange={(e)=> this.props.onChange("experience", this.props.position, "roles", e.target.value, index)}/>
+        </label>
         <br />
       </div>
     );
     return (
       <div className="formInput">
-        <input className="defaultInput" type="text" value={this.props.title} onChange={(e)=>this.props.onChange("experience", this.props.position, "title", e.target.value, 0)} />
+        <label>
+          Job Title:
+          <input className="defaultInput" type="text" value={this.props.title} onChange={(e)=>this.props.onChange("experience", this.props.position, "title", e.target.value, 0)} />
+        </label>
         <br />
-        <input className="defaultInput" type="text" value={this.props.employer} onChange={(e)=>this.props.onChange("experience", this.props.position, "employer", e.target.value, 0)} />
+        <label>
+          Employer:
+          <input className="defaultInput" type="text" value={this.props.employer} onChange={(e)=>this.props.onChange("experience", this.props.position, "employer", e.target.value, 0)} />
+        </label>
         <br />
-        <input className="defaultInput" type="text" value={this.props.duration} onChange={(e)=>this.props.onChange("experience", this.props.position, "duration", e.target.value, 0)} />
+        <label>
+          Duration:
+          <input className="defaultInput" type="text" value={this.props.duration} onChange={(e)=>this.props.onChange("experience", this.props.position, "duration", e.target.value, 0)} />
+        </label>
         <br />
         <span>Roles</span>
         {roles}
-        <button onClick={()=>{
+        <button className="addRole" onClick={()=>{
           this.props.addRole("experience", this.props.position)
-        }}>+</button>
+        }}>+ Role</button>
       </div>
     )
   }

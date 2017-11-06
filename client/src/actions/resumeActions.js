@@ -81,7 +81,7 @@ export function addForm(_type){
         }
       }
       break;
-    case "other":
+    case "otherExp":
       payload = {
         type: _type,
         values: {

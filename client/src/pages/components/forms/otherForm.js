@@ -4,23 +4,35 @@ class OtherForm extends Component {
   render(){
     var roles = this.props.roles.map((item, index)=>
       <div key={index}>
-        <input className="inputRoles" key={index} type="text" value={item} onChange={(e)=> this.props.onChange("experience", this.props.position, "roles", e.target.value, index)}/>
+        <label>
+          -
+          <textarea className="inputRoles" key={index} type="text" value={item} onChange={(e)=> this.props.onChange("experience", this.props.position, "roles", e.target.value, index)}/>
+        </label>
         <br />
       </div>
     );
     return (
       <div className="formInput">
-        <input className="inputTitle" type="text" value={this.props.title} onChange={(e)=>this.props.onChange("experience", this.props.position, "title", e.target.value)} />
+        <label>
+          Title:
+          <input className="inputTitle" type="text" value={this.props.title} onChange={(e)=>this.props.onChange("experience", this.props.position, "title", e.target.value)} />
+        </label>
         <br />
-        <input className="inputOrganization" type="text" value={this.props.organization} onChange={(e)=>this.props.onChange("experience", this.props.position, "employer", e.target.value)} />
+        <label>
+          Organization:
+          <input className="inputOrganization" type="text" value={this.props.organization} onChange={(e)=>this.props.onChange("experience", this.props.position, "employer", e.target.value)} />
+        </label>
         <br />
-        <input className="inputDuration" type="text" value={this.props.duration} onChange={(e)=>this.props.onChange("experience", this.props.position, "duration", e.target.value)} />
+        <label>
+          Duration:
+          <input className="inputDuration" type="text" value={this.props.duration} onChange={(e)=>this.props.onChange("experience", this.props.position, "duration", e.target.value)} />
+        </label>
         <br />
         <span>Roles</span>
         {roles}
-        <button onClick={()=>{
+        <button className="addRole" onClick={()=>{
           this.props.addRole("other", this.props.position)
-        }}>+</button>
+        }}>+ Role</button>
       </div>
     )
   }

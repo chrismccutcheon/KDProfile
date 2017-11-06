@@ -19,6 +19,7 @@ router.get('/logout', (req, res)=>{
 router.post('/addeducation', (req, res)=>{
   if(req.body !== {}){
     const education = new Education({
+      id: req.body.id,
       title: req.body.title,
       school: req.body.school,
       location: req.body.location,
@@ -45,6 +46,7 @@ router.get('/education', (req, res)=>{
 router.post('/addexperience', (req, res)=>{
   if(req.body !== {}){
     const education = new Experience({
+      id: req.body.id,
       title: req.body.title,
       employer: req.body.employer,
       duration: req.body.duration,
@@ -71,6 +73,7 @@ router.get('/experience', (req, res)=>{
 router.post('/addvolunteering', (req, res)=>{
   if(req.body !== {}){
     const volunteering = new Volunteering({
+      id: req.body.id,
       title: req.body.title,
       organization: req.body.employer,
       duration: req.body.duration,
@@ -97,6 +100,7 @@ router.get('/volunteering', (req, res)=>{
 router.post('/addother', (req, res)=>{
   if(req.body !== {}){
     const other = new Other({
+      id: req.body.id,
       title: req.body.title,
       organization: req.body.employer,
       duration: req.body.duration,

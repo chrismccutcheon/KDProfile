@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const educationSchema = new Schema({
+  id: Number,
   title: String,
   school: String,
   location: String,
